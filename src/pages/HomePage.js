@@ -54,7 +54,7 @@ const HomePage = () => {
 					</button>
 					{pageNumber}
 					<button
-						className="bg-white rounded-full px-4 ml-2 hover:border-black border-2 hover:font-bold"
+						className="bg-white rounded-full px-7 ml-2 hover:border-black border-2 hover:font-bold"
 						onClick={() => {
 							if (pageNumber < 20) setMovies("Loading");
 							setPageNumber(pageNumber + 1);
