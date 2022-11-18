@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import loading_spinner from "./../assets/loading_spinner.gif";
 import play_icon from "./../assets/play_icon.png";
+import { RiArrowGoBackLine } from "react-icons/ri";
 
 const MoviePage = () => {
 	const { movieId } = useParams();
@@ -87,13 +88,18 @@ const MoviePage = () => {
 				/>
 				<h1 className="z-10 md:ml-10 text-center">{movie.title}</h1>
 			</div>
+			{/* Overview */}
+			<div className="mt-5 md:mt-10 text-2xl md:text-3xl lg:text-5xl text-center">Overview</div>
+				<div className="mt-5 md:mt-10 font-normal text-lg md:text-xl lg:text-2xl px-5">
+					{movie.overview}
+				</div>
 
 			{/* Clips and Trailers */}
 			<div
 				className="mt-5 md:mt-10 text-xl md:text-2xl lg:text-4xl pb-[100px] mx-2 sm:mx-5
          md:mx-[50px] lg:mx-[100px]"
 			>
-				<div className="mt-5 mb-5 md:mt-10 text-lg md:text-xl lg:text-2xl">
+				<div className="mt-5 mb-5 md:mt-10 text-center text-lg md:text-xl lg:text-2xl">
 					<div>
 						Release Date:{" "}
 						<span className="font-normal">{movie.release_date}</span>
@@ -105,7 +111,10 @@ const MoviePage = () => {
 						</span>
 					</div>
 					<div>
-						Rating: <span className="font-normal">{movie.vote_average.toFixed(1)}/10</span>
+						Rating:{" "}
+						<span className="font-normal">
+							{movie.vote_average.toFixed(1)}/10
+						</span>
 					</div>
 				</div>
 				Clips and Trailers
@@ -136,11 +145,10 @@ const MoviePage = () => {
 						</div>
 					))}
 				</div>
-				{/* Overview */}
-				<div className="mt-5 md:mt-10">Overview</div>
-				<div className="mt-5 md:mt-10 font-normal text-lg md:text-xl lg:text-2xl">
-					{movie.overview}
-				</div>
+				
+				<Link to="/" className="hidden absolute top-10 left-10 md:block">
+					<RiArrowGoBackLine />
+				</Link>
 			</div>
 		</div>
 	);

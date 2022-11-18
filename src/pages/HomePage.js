@@ -12,7 +12,6 @@ const HomePage = () => {
 		const res = await axios.get(
 			`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${pageNumber}`
 		);
-		console.log(res.data.results);
 		return res.data.results;
 	}
 
