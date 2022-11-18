@@ -93,6 +93,21 @@ const MoviePage = () => {
 				className="mt-5 md:mt-10 text-xl md:text-2xl lg:text-4xl pb-[100px] mx-2 sm:mx-5
          md:mx-[50px] lg:mx-[100px]"
 			>
+				<div className="mt-5 mb-5 md:mt-10 text-lg md:text-xl lg:text-2xl">
+					<div>
+						Release Date:{" "}
+						<span className="font-normal">{movie.release_date}</span>
+					</div>
+					<div>
+						Duration:{" "}
+						<span className="font-normal">
+							{parseInt(movie.runtime / 60)}:{movie.runtime % 60}
+						</span>
+					</div>
+					<div>
+						Rating: <span className="font-normal">{movie.vote_average.toFixed(1)}/10</span>
+					</div>
+				</div>
 				Clips and Trailers
 				<div className="flex overflow-scroll scrollbar-hide snap-x mt-5 md:mt-10">
 					{clips.map((clip) => (
@@ -120,6 +135,11 @@ const MoviePage = () => {
 							</p>
 						</div>
 					))}
+				</div>
+				{/* Overview */}
+				<div className="mt-5 md:mt-10">Overview</div>
+				<div className="mt-5 md:mt-10 font-normal text-lg md:text-xl lg:text-2xl">
+					{movie.overview}
 				</div>
 			</div>
 		</div>
