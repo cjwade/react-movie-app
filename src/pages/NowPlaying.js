@@ -5,13 +5,13 @@ import MovieCard from "../Components/MovieCard";
 import NavBar from "../Components/NavBar";
 import loading_spinner from "./../assets/loading_spinner.gif";
 
-const HomePage = () => {
+const NowPlaying = () => {
 	const [movies, setMovies] = useState("Loading");
 	const [pageNumber, setPageNumber] = useState(1);
 
 	async function fetchMovies(pageNumber) {
 		const res = await axios.get(
-			`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${pageNumber}`
+			`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${pageNumber}`
 		);
 		return res.data.results;
 	}
@@ -68,4 +68,4 @@ const HomePage = () => {
 		);
 };
 
-export default HomePage;
+export default NowPlaying;

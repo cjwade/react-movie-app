@@ -84,15 +84,17 @@ const MoviePage = () => {
 				<img
 					src={"https://image.tmdb.org/t/p/original/" + movie.poster_path}
 					alt="poster"
-					className="rounded-xl border-white border-4 max-w-[min(400px,90%)] sm:max-w-[50%] md:h-[576px] z-10"
+					className="rounded-xl border-white border-4 my-3 max-w-[min(400px,90%)] sm:max-w-[50%] md:h-[576px] z-10"
 				/>
 				<h1 className="z-10 md:ml-10 text-center">{movie.title}</h1>
 			</div>
 			{/* Overview */}
-			<div className="mt-5 md:mt-10 text-2xl md:text-3xl lg:text-5xl text-center">Overview</div>
-				<div className="mt-5 md:mt-10 font-normal text-lg md:text-xl lg:text-2xl px-5">
-					{movie.overview}
-				</div>
+			<div className="mt-5 md:mt-10 text-2xl md:text-3xl lg:text-5xl text-center">
+				Overview
+			</div>
+			<div className="mt-5 md:mt-10 font-normal text-lg md:text-xl lg:text-2xl px-5">
+				{movie.overview}
+			</div>
 
 			{/* Clips and Trailers */}
 			<div
@@ -145,7 +147,6 @@ const MoviePage = () => {
 						</div>
 					))}
 				</div>
-				
 				<Link to="/" className="hidden absolute top-10 left-10 md:block">
 					<RiArrowGoBackLine />
 				</Link>
