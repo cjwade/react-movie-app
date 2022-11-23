@@ -9,7 +9,7 @@ const NavBar = () => {
 					Movie Explorer
 				</div>
 			</Link>
-			<div className="text-white flex space-x-4 items-center justify-end mr-[110px] md:text-xl lg:text-2xl">
+			<div className="text-white flex space-x-4 items-center justify-end mr-[65px] lg:mr-[110px] md:text-xl lg:text-2xl">
 				<Link to="/popular" className="hover:underline hidden sm:block">
 					<h2>Popular</h2>
 				</Link>
